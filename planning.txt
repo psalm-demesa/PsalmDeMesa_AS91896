@@ -1,0 +1,63 @@
+START PROGRAM
+
+SET play_again TO "yes"
+
+WHILE play_again = "yes" DO
+
+    INPUT name
+    PRINT "Welcome to Hangman," + name
+
+    INPUT "Do you want to continue the game? (yes/no)" -> continue_game
+
+    IF continue_game = "yes" THEN
+        CONTINUE game
+
+    ELSE
+        INPUT "Are you sure you want to exit the game? (yes/no)" -> exit_game
+
+        IF exit_game = "yes" THEN
+            END PROGRAM
+
+        ELSE
+            RESTART PROGRAM
+            PRINT "Restarting..."
+
+        END IF 
+
+    SET word_list TO (pseudo, python, maths, apple, orange, pepperoni, milk, circus, difficult, office, pen)
+    SELECT random word from word_list -> display_word
+    SET lives to 7
+
+    SET number_of_letters TO length of display_word
+    DISPLAY "_" for each letter in display_word
+
+    WHILE display_word is not complete AND lives > 0 DO 
+        PRINT number_of_letters
+        INPUT "Guess a letter:" -> guessed_letter
+
+            IF guessed_letter is in display_word THEN
+            REVEAL guessed_letter 
+            PRINT "Correct"
+
+            ELSE 
+                SUBTRACT 1 from lives
+                PRINT "Wrong! Lives left:" + lives
+
+            END IF
+
+    END WHILE
+
+    IF display_word is complete THEN
+        PRINT "Congratulation!"
+
+    ELSE 
+        PRINT "Game over! The word was:" + display_word
+
+    END IF
+
+    INPUT "Would you like to play again? (yes/no)" -> play_again
+
+END WHILE
+
+END PROGRAM
+
