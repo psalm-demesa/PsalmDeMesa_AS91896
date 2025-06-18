@@ -39,16 +39,17 @@ while True:
         #Game starts here
         print("Ready?")
         print()
-        print_underscores(chosen_word)
-        letter = input("Guess a Letter:")
-        letter.lower
+        while True:
+            print_underscores(chosen_word)
+            letter = input("Guess a Letter:")
+            letter.lower
 
-        #Decision making
-        if letter in chosen_word:
-            print("You have guessed a letter!")
-        if letter not in chosen_word:
-            print("Incorrect! You have {} lives remaining." .format(lives - 1))
-            lives -= 1
+            #Decision making
+            if letter in chosen_word:
+                print("You have guessed a letter!")
+            if letter not in chosen_word:
+                print("Incorrect! You have {} lives remaining." .format(lives - 1))
+                lives -= 1
 
     
 
