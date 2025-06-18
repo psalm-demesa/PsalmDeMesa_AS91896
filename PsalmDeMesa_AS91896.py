@@ -53,6 +53,7 @@ while True:
                 print("Incorrect! You have {} lives remaining." .format(lives - 1))
                 lives -= 1
 
+
     #This is for when the user want to exit the game.
     if continue_game == "no":
         print("All good! Let's play again next time!")

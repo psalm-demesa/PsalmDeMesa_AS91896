@@ -24,7 +24,7 @@ WHILE play_again = "yes" DO
 
         END IF 
 
-    SET word_list TO ('tree','apple','banana','pepparoni','car','computer','chair','watch','milk','orange','circus','spaghetti')
+    SET word_list TO (words.txt)
     SELECT random word from word_list -> display_word
     SET lives to 7
 
