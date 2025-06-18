@@ -48,17 +48,10 @@ while True:
             if letter in chosen_word:
                 print("You have guessed a letter!")
 
+
             if letter not in chosen_word:
                 print("Incorrect! You have {} lives remaining." .format(lives - 1))
                 lives -= 1
-
-    
-
-
-
-
-
-
 
     #This is for when the user want to exit the game.
     if continue_game == "no":
