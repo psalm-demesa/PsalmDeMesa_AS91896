@@ -29,30 +29,42 @@ while True:
         lives = 7
 
         #Setting up the randomiser and the game setup
-        word_list = ['tree','apple','banana','pepparoni','car','computer','chair','watch','milk','orange','circus','spaghetti']
+        with open ("words.txt","r") as file:
+            word_list = file.read().splitlines()
         chosen_word = random.choice(word_list)
-        def print_underscores(word):
-            for letter in word:
-                print(" _ ", end="") 
-            print()
+        word_display = [" _ "] * len(chosen_word)
+        print()
 
         #Game starts here
         print("Ready?")
         print()
-        while True:
-            print_underscores(chosen_word)
-            letter = input("Guess a Letter:")
+        while lives > 0 and "_" in word_display:
+            print("Word:","".join(word_display)) #Joins the "word:" statement with the underscores from the word display
+            letter = input("Guess a Letter:") #Lets the user input a letter
             letter.lower
+
+            #Checking whether the input contains 1 letter and is in the alphabet
+            if len(letter) != 1 or not letter.isalpha():
+                print("Please enter only a single number (a-z)")
 
             #Decision making
             if letter in chosen_word:
                 print("You have guessed a letter!")
-
-
+                for i in range(len(chosen_word)):
+                    if chosen_word[i] == letter:
+                        word_display[i] = letter
+                print()
+            
             if letter not in chosen_word:
                 print("Incorrect! You have {} lives remaining." .format(lives - 1))
                 lives -= 1
+                print()
 
+            if "_" not in word_display:
+                print("Congratulations on guessing the word!!")
+            
+            if lives == 0 and "_" in word_display:
+                print("You have lost the game! The word was:", chosen_word)
 
     #This is for when the user want to exit the game.
     if continue_game == "no":
