@@ -45,7 +45,7 @@ while True:
 
             #Checking whether the input contains 1 letter and is in the alphabet
             if len(letter) != 1 or not letter.isalpha():
-                print("Please enter only a single number (a-z)")
+                print("Please enter only a single letter (a-z)")
 
             #Decision making
             if letter in chosen_word:
