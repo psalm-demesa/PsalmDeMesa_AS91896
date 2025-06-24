@@ -52,7 +52,7 @@ while True:
                 print("You have guessed a letter!")
                 for i in range(len(chosen_word)):
                     if chosen_word[i] == letter:
-                        word_display[i] = letter
+                        word_display[i] = letter #This replaces the underscore with the guessed letter
                 print()
             
             if letter not in chosen_word:
