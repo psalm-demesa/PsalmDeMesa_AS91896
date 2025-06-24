@@ -41,7 +41,7 @@ while True:
         while lives > 0 and "_" in word_display:
             print("Word:","".join(word_display)) #Joins the "word:" statement with the underscores from the word display
             letter = input("Guess a Letter:") #Lets the user input a letter
-            letter.lower
+            letter = letter.lower
 
             #Checking whether the input contains 1 letter and is in the alphabet
             if len(letter) != 1 or not letter.isalpha():
