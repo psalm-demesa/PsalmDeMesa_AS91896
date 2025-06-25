@@ -23,7 +23,7 @@ while True:
     #Setting up the randomiser and the game setup
     with open ("words.txt","r") as file:
         word_list = file.read().splitlines()
-        chosen_word = random.choice(word_list)
+        chosen_word = random.choice(word_list).lower()
         word_display = [" _ "] * len(chosen_word)
         print()
 
