@@ -79,6 +79,4 @@ while True:
         if play_again != "yes": #If the user doesn't say yes, the game will automatically stop at this point.
             print("Thanks for playing!")
             print()
-            break
-
-        
+            break   
